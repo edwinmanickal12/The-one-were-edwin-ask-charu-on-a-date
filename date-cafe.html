@@ -3,74 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choose a Cafe</title>
-    <link href="https://fonts.googleapis.com/css2?family=Featherly&display=swap" rel="stylesheet">
+    <title>Selected Date and Cafe</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: 'Featherly', cursive;
-            background-image: url('https://github.com/edwinmanickal12/The-one-were-edwin-ask-charu-on-a-date/raw/main/WhatsApp%20Image%202025-02-09%20at%2003.18.59_fc60dc51.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background: url('https://github.com/edwinmanickal12/The-one-were-edwin-ask-charu-on-a-date/raw/main/WhatsApp%20Image%202025-02-09%20at%2002.49.13_02eac908.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
             text-align: center;
         }
 
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 30px;
+            font-size: 4em;
         }
 
-        .cafe-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .cafe-box {
-            background-color: rgba(255, 255, 255, 0.5);
-            margin: 10px;
-            padding: 20px;
+        .buttons button {
             font-size: 1.5em;
+            padding: 15px 30px;
+            margin: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
             cursor: pointer;
-            border-radius: 10px;
-            transition: background-color 0.3s;
-            color: black; /* Black text color for visibility */
-            width: 150px; /* Adjust box size */
-            text-align: center;
         }
 
-        .cafe-box:hover {
-            background-color: rgba(255, 99, 71, 0.8);
+        .buttons button:hover {
+            background-color: rgba(255, 0, 0, 0.7);
         }
 
-        /* To ensure "Any other" links to WhatsApp */
-        .whatsapp-link {
-            text-decoration: none;
-            color: black;
+        .cafe-selection {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
-    <h1>Select a Cafe</h1>
+    <h1>You've selected: </h1>
 
-    <div class="cafe-container">
-        <div class="cafe-box">KFC</div>
-        <div class="cafe-box">Domino's</div>
-        <div class="cafe-box">Pizza Hut</div>
-        <div class="cafe-box">Amer bake place</div>
-        <div class="cafe-box">Cake walk</div>
-        <div class="cafe-box">Cafe latte</div>
-        <div class="cafe-box">Oliver bistro</div>
-        <div class="cafe-box">My place 😉</div>
-        <!-- Wrap the "Any other" with a WhatsApp link -->
-        <a href="https://wa.me/+917510643051" class="whatsapp-link">
-            <div class="cafe-box">Any other</div>
-        </a>
+    <div class="cafe-selection">
+        <p><strong>Date:</strong> <span id="selectedDate"></span></p>
+        <p><strong>Cafe:</strong> <span id="selectedCafe"></span></p>
     </div>
+
+    <div class="buttons">
+        <button onclick="window.location.href='https://wa.me/+917510643051'">Let me Know!</button>
+    </div>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const date = urlParams.get('date');
+        const cafe = urlParams.get('cafe');
+
+        // Display selected date and cafe
+        document.getElementById('selectedDate').innerText = date;
+        document.getElementById('selectedCafe').innerText = cafe;
+    </script>
 
 </body>
 </html>
