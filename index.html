@@ -5,26 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Just One Question</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Featherly&display=swap" rel="stylesheet">
     <style>
+        /* Apply Featherly font */
         body {
+            font-family: 'Featherly', cursive;
             background-image: url('https://github.com/edwinmanickal12/The-one-were-edwin-ask-charu-on-a-date/raw/main/WhatsApp%20Image%202025-02-09%20at%2001.13.07_192e250d.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            margin: 0;
+            height: 100vh;  /* Ensure the image covers the full height */
         }
 
-        /* Optional: Styling for the content */
+        /* Container to center content */
         .container {
             text-align: center;
             padding: 50px;
             color: white;
+            position: relative;
+            z-index: 1;  /* Ensure the text stays on top of the image */
+        }
+
+        h1 {
+            font-size: 4em; /* Make font bigger */
         }
 
         #buttons button {
             margin: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 15px 30px;
+            font-size: 18px;
             cursor: pointer;
+        }
+
+        /* Adjustments for larger screens (desktop) */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 6em; /* Increase the font size on larger screens */
+            }
+            #buttons button {
+                padding: 20px 40px;
+                font-size: 20px;
+            }
+        }
+
+        /* Ensure the background image fills the page without any color bleeding */
+        body {
+            background-color: transparent;
         }
     </style>
 </head>
