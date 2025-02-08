@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafes for your Date</title>
+    <title>Choose a Cafe</title>
     <link href="https://fonts.googleapis.com/css2?family=Featherly&display=swap" rel="stylesheet">
     <style>
         body {
@@ -16,7 +16,6 @@
             margin: 0;
             padding: 20px;
             text-align: center;
-            height: 100vh;
         }
 
         h1 {
@@ -24,44 +23,53 @@
             margin-bottom: 30px;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .cafe-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cafe-box {
+            background-color: rgba(255, 255, 255, 0.5);
+            margin: 10px;
+            padding: 20px;
             font-size: 1.5em;
-        }
-
-        li {
-            margin: 10px 0;
-        }
-
-        #buttons button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
             cursor: pointer;
-            border: none;
-            background-color: #ff6f61;
-            color: white;
-            border-radius: 8px;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+            color: black; /* Black text color for visibility */
+            width: 150px; /* Adjust box size */
+            text-align: center;
         }
 
+        .cafe-box:hover {
+            background-color: rgba(255, 99, 71, 0.8);
+        }
+
+        /* To ensure "Any other" links to WhatsApp */
+        .whatsapp-link {
+            text-decoration: none;
+            color: black;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Here are some great cafes for your date:</h1>
-    
-    <ul>
-        <li>KFC</li>
-        <li>Domino's</li>
-        <li>Pizza Hut</li>
-        <li>Amer</li>
-        <li>Any Restro</li>
-        <li>Or Any Cafe in my place 😉</li>
-    </ul>
+    <h1>Select a Cafe</h1>
 
-    <div id="buttons">
-        <button onclick="window.history.back();">Go Back</button>
+    <div class="cafe-container">
+        <div class="cafe-box">KFC</div>
+        <div class="cafe-box">Domino's</div>
+        <div class="cafe-box">Pizza Hut</div>
+        <div class="cafe-box">Amer bake place</div>
+        <div class="cafe-box">Cake walk</div>
+        <div class="cafe-box">Cafe latte</div>
+        <div class="cafe-box">Oliver bistro</div>
+        <div class="cafe-box">My place 😉</div>
+        <!-- Wrap the "Any other" with a WhatsApp link -->
+        <a href="https://wa.me/+917510643051" class="whatsapp-link">
+            <div class="cafe-box">Any other</div>
+        </a>
     </div>
 
 </body>
