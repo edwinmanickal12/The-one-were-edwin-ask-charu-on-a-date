@@ -3,130 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select Cafe</title>
+    <title>Select a Cafe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Featherly&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Featherly', cursive;
-            background-image: url('https://github.com/edwinmanickal12/The-one-were-edwin-ask-charu-on-a-date/raw/main/WhatsApp%20Image%202025-02-09%20at%2002.49.13_02eac908.jpg');
+            margin: 0;
+            height: 100vh;
+            background-image: url('https://raw.githubusercontent.com/edwinmanickal12/The-one-were-edwin-ask-charu-on-a-date/main/WhatsApp%20Image%202025-02-09%20at%2002.49.13_02eac908.jpg');
             background-size: cover;
             background-position: center;
             color: white;
-            margin: 0;
-            height: 100vh;
             text-align: center;
         }
-
         h1 {
             font-size: 3em;
             margin-top: 50px;
         }
-
-        .dates-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .date-box {
-            background-color: rgba(255, 255, 255, 0.7);
-            margin: 10px;
-            padding: 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 1.5em;
-            color: black;
-            width: 200px;
-            text-align: center;
-        }
-
-        .date-box:hover {
-            background-color: rgba(255, 255, 255, 0.9);
-        }
-
-        .date-box:active {
-            background-color: rgba(255, 255, 255, 0.5);
-        }
-
-        .cafe-container {
-            display: flex;
-            justify-content: center;
+        .container {
             margin-top: 50px;
         }
-
-        .cafe-box {
-            background-color: rgba(255, 255, 255, 0.7);
-            margin: 10px;
+        .place-option {
+            margin: 20px;
             padding: 20px;
-            border-radius: 10px;
-            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.5);
             font-size: 1.5em;
-            color: black;
-            width: 200px;
-            text-align: center;
-        }
-
-        .cafe-box:hover {
-            background-color: rgba(255, 255, 255, 0.9);
-        }
-
-        .cafe-box:active {
-            background-color: rgba(255, 255, 255, 0.5);
-        }
-
-        #confirm-button {
-            margin-top: 40px;
-            padding: 15px 30px;
-            font-size: 20px;
             cursor: pointer;
-            background-color: rgba(255, 255, 255, 0.6);
-            border: none;
-            color: black;
-            border-radius: 5px;
+            width: 200px;
+            display: inline-block;
+            border-radius: 10px;
+        }
+        .place-option:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        #chosen-date {
+            font-size: 1.8em;
+            margin-bottom: 30px;
         }
     </style>
 </head>
 <body>
-    <h1>Choose a Cafe for <span id="selected-date"></span></h1>
 
-    <div class="cafe-container">
-        <div class="cafe-box" onclick="confirmChoice('KFC')">KFC</div>
-        <div class="cafe-box" onclick="confirmChoice('Domino\'s')">Domino's</div>
-        <div class="cafe-box" onclick="confirmChoice('Pizza Hut')">Pizza Hut</div>
-        <div class="cafe-box" onclick="confirmChoice('Amer Bake Place')">Amer Bake Place</div>
-        <div class="cafe-box" onclick="confirmChoice('Cake Walk')">Cake Walk</div>
-        <div class="cafe-box" onclick="confirmChoice('Cafe Latte')">Cafe Latte</div>
-        <div class="cafe-box" onclick="confirmChoice('Oliver Bistro')">Oliver Bistro</div>
-        <div class="cafe-box" onclick="confirmChoice('My Place 😉')">My Place 😉</div>
-        <div class="cafe-box" onclick="openWhatsApp()">Any Other</div>
+    <h1>Choose a Place</h1>
+    
+    <div id="chosen-date"></div>
+
+    <div class="container">
+        <div class="place-option" onclick="sendMessage('KFC')">KFC</div>
+        <div class="place-option" onclick="sendMessage('Domino\'s')">Domino's</div>
+        <div class="place-option" onclick="sendMessage('Pizza Hut')">Pizza Hut</div>
+        <div class="place-option" onclick="sendMessage('Amer Bake Place')">Amer Bake Place</div>
+        <div class="place-option" onclick="sendMessage('Cake Walk')">Cake Walk</div>
+        <div class="place-option" onclick="sendMessage('Cafe Latte')">Cafe Latte</div>
+        <div class="place-option" onclick="sendMessage('Oliver Bistro')">Oliver Bistro</div>
+        <div class="place-option" onclick="sendMessage('My Place 😉')">My Place 😉</div>
+        <div class="place-option" onclick="sendMessage('Any Other')">Any Other</div>
     </div>
 
-    <button id="confirm-button">Confirm Your Choice</button>
-
     <script>
-        // Function to get the date from the URL parameters
-        function getDateFromURL() {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get('date');
-        }
+        // Get the selected date from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedDate = urlParams.get('date');
+        
+        // Display the selected date on the page
+        document.getElementById('chosen-date').textContent = Selected Date: ${selectedDate};
 
-        // Function to display the selected date
-        document.getElementById('selected-date').textContent = getDateFromURL();
+        function sendMessage(cafe) {
+            let message = Hey Valentine, the date ${selectedDate} at ${cafe}... See you there! 🌝;
+            let whatsappLink = '';
 
-        // Function to confirm the cafe choice
-        function confirmChoice(cafeName) {
-            const selectedDate = getDateFromURL();
-            const message = Hey Valentine, the date ${selectedDate} at ${cafeName}... See you there...🌝;
-            const whatsappLink = https://wa.me/+917510643051?text=${encodeURIComponent(message)};
-            window.location.href = whatsappLink;
-        }
+            if (cafe === 'Any Other') {
+                whatsappLink = 'https://wa.me/+917510643051'; // Link for 'Any Other' option
+            } else {
+                whatsappLink = https://wa.me/+917510643051?text=${encodeURIComponent(message)}; // Other options with message prefilled
+            }
 
-        // Function to open WhatsApp chat when 'Any Other' is selected
-        function openWhatsApp() {
-            const selectedDate = getDateFromURL();
-            const message = Hey Valentine, I’d like to choose a different place for the date ${selectedDate}. Can you help me?;
-            const whatsappLink = https://wa.me/+917510643051?text=${encodeURIComponent(message)};
-            window.location.href = whatsappLink;
+            window.location.href = whatsappLink; // Open the WhatsApp link
         }
     </script>
+
 </body>
 </html>
