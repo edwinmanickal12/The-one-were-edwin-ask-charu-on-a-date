@@ -3,40 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wanna Go Out?</title>
+    <title>Just One Question</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="container">
-        <h1>Do You Wanna Go Out Sometime?</h1>
-        <button id="yesBtn">Yes</button>
-        <button id="noBtn">No</button>
-
-        <div id="dateOptions" class="hidden">
-            <h2>Select a Date:</h2>
-            <select id="dateSelect">
-                <option value="">Choose a Date</option>
-                <option value="Feb 10">Feb 10</option>
-                <option value="Feb 14">Feb 14 (Valentine's Special!)</option>
-                <option value="Feb 20">Feb 20</option>
-            </select>
+        <div class="gallery">
+            <img src="images/photo1.jpg" alt="Photo 1">
+            <img src="images/photo2.jpg" alt="Photo 2">
+            <img src="images/photo3.jpg" alt="Photo 3">
+            <img src="images/photo4.jpg" alt="Photo 4">
+            <img src="images/photo5.jpg" alt="Photo 5">
         </div>
 
-        <div id="placeOptions" class="hidden">
-            <h2>Pick a Place:</h2>
-            <select id="placeSelect">
-                <option value="">Choose a Place</option>
-                <option value="Café">Café</option>
-                <option value="Movie">Movie</option>
-                <option value="Beach">Beach</option>
-                <option value="Park">Park</option>
-            </select>
+        <h1>Would you make me the happiest by saying Yes?</h1>
+        
+        <div id="buttons">
+            <button onclick="location.href='yes.html'">Yes</button>
+            <button onclick="location.href='no.html'">No</button>
         </div>
-
-        <p id="message" class="hidden"></p>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
