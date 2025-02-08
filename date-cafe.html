@@ -3,84 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Select a Cafe</title>
+    <title>Choose a Place</title>
     <link href="https://fonts.googleapis.com/css2?family=Featherly&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Featherly', cursive;
             margin: 0;
             height: 100vh;
-            background-image: url('https://raw.githubusercontent.com/edwinmanickal12/The-one-were-edwin-ask-charu-on-a-date/main/WhatsApp%20Image%202025-02-09%20at%2002.49.13_02eac908.jpg');
-            background-size: cover;
-            background-position: center;
+            background: url('https://raw.githubusercontent.com/edwinmanickal12/The-one-were-edwin-ask-charu-on-a-date/main/WhatsApp%20Image%202025-02-09%20at%2003.18.59_fc60dc51.jpg') no-repeat center center/cover;
             color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
         }
+
         h1 {
             font-size: 3em;
-            margin-top: 50px;
+            margin-bottom: 20px;
         }
-        .container {
-            margin-top: 50px;
-        }
-        .place-option {
-            margin: 20px;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.5);
-            font-size: 1.5em;
-            cursor: pointer;
-            width: 200px;
-            display: inline-block;
-            border-radius: 10px;
-        }
-        .place-option:hover {
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-        #chosen-date {
-            font-size: 1.8em;
+
+        #selected-date {
+            font-size: 2em;
             margin-bottom: 30px;
+        }
+
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .option-btn {
+            background: white;
+            color: black;
+            font-size: 1.5em;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .option-btn:hover {
+            background: #ff4d6d;
+            color: white;
         }
     </style>
 </head>
 <body>
 
     <h1>Choose a Place</h1>
-    
-    <div id="chosen-date"></div>
+    <div id="selected-date"></div>
 
-    <div class="container">
-        <div class="place-option" onclick="sendMessage('KFC')">KFC</div>
-        <div class="place-option" onclick="sendMessage('Domino\'s')">Domino's</div>
-        <div class="place-option" onclick="sendMessage('Pizza Hut')">Pizza Hut</div>
-        <div class="place-option" onclick="sendMessage('Amer Bake Place')">Amer Bake Place</div>
-        <div class="place-option" onclick="sendMessage('Cake Walk')">Cake Walk</div>
-        <div class="place-option" onclick="sendMessage('Cafe Latte')">Cafe Latte</div>
-        <div class="place-option" onclick="sendMessage('Oliver Bistro')">Oliver Bistro</div>
-        <div class="place-option" onclick="sendMessage('My Place 😉')">My Place 😉</div>
-        <div class="place-option" onclick="sendMessage('Any Other')">Any Other</div>
+    <div class="options">
+        <button class="option-btn" onclick="sendToWhatsApp('KFC')">KFC</button>
+        <button class="option-btn" onclick="sendToWhatsApp('Domino\'s')">Domino's</button>
+        <button class="option-btn" onclick="sendToWhatsApp('Pizza Hut')">Pizza Hut</button>
+        <button class="option-btn" onclick="sendToWhatsApp('Amer Bake Place')">Amer Bake Place</button>
+        <button class="option-btn" onclick="sendToWhatsApp('Cake Walk')">Cake Walk</button>
+        <button class="option-btn" onclick="sendToWhatsApp('Cafe Latte')">Cafe Latte</button>
+        <button class="option-btn" onclick="sendToWhatsApp('Oliver Bistro')">Oliver Bistro</button>
+        <button class="option-btn" onclick="sendToWhatsApp('My Place 😉')">My Place 😉</button>
+        <button class="option-btn" onclick="window.location.href='https://wa.me/+917510643051'">Any Other</button>
     </div>
 
     <script>
-        // Get the selected date from the URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const selectedDate = urlParams.get('date');
-        
-        // Display the selected date on the page
-        if (selectedDate) {
-            document.getElementById('chosen-date').textContent = Selected Date: ${selectedDate};
-        }
+        // Get selected date from URL
+        const params = new URLSearchParams(window.location.search);
+        const selectedDate = params.get('date') || 'a special day';
+        document.getElementById('selected-date').innerText = Selected Date: ${selectedDate};
 
-        function sendMessage(cafe) {
-            let message = Hey Valentine, the date ${selectedDate} at ${cafe}... See you there! 🌝;
-            let whatsappLink = '';
-
-            if (cafe === 'Any Other') {
-                whatsappLink = 'https://wa.me/+917510643051'; // Link for 'Any Other' option
-            } else {
-                whatsappLink = https://wa.me/+917510643051?text=${encodeURIComponent(message)}; // Other options with message prefilled
-            }
-
-            window.location.href = whatsappLink; // Open the WhatsApp link
+        // Function to send pre-filled WhatsApp message
+        function sendToWhatsApp(place) {
+            const message = Hey Valentine, the date is ${selectedDate} at ${place}... See you there...🌝;
+            const whatsappURL = https://wa.me/+917510643051?text=${encodeURIComponent(message)};
+            window.location.href = whatsappURL;
         }
     </script>
 
