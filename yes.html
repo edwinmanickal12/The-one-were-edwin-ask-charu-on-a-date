@@ -3,64 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choose a Special Day</title>
+    <title>Choose a Special Day, Valentine</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Featherly&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Featherly', cursive;
-            background-image: url('https://github.com/edwinmanickal12/The-one-were-edwin-ask-charu-on-a-date/raw/main/WhatsApp%20Image%202025-02-09%20at%2002.49.13_02eac908.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background: url('https://github.com/edwinmanickal12/The-one-were-edwin-ask-charu-on-a-date/raw/main/WhatsApp%20Image%202025-02-09%20at%2002.49.13_02eac908.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
             text-align: center;
         }
 
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 30px;
+            font-size: 4em;
         }
 
-        .dates-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .date-box {
-            background-color: rgba(255, 255, 255, 0.5);
-            margin: 10px;
-            padding: 20px;
+        .buttons button {
             font-size: 1.5em;
+            padding: 15px 30px;
+            margin: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
             cursor: pointer;
-            border-radius: 10px;
-            transition: background-color 0.3s;
-            color: black; /* Black text color for visibility */
         }
 
-        .date-box:hover {
-            background-color: rgba(255, 99, 71, 0.8);
+        .buttons button:hover {
+            background-color: rgba(255, 0, 0, 0.7);
         }
     </style>
 </head>
 <body>
-
     <h1>Choose a Special Day, Valentine</h1>
-
-    <div class="dates-container">
-        <!-- Dates will link to date-cafe.html -->
-        <div class="date-box" onclick="window.location.href='date-cafe.html?date=Feb%2011'">Feb 11</div>
-        <div class="date-box" onclick="window.location.href='date-cafe.html?date=Feb%2012'">Feb 12</div>
-        <div class="date-box" onclick="window.location.href='date-cafe.html?date=Feb%2013'">Feb 13</div>
-        <div class="date-box" onclick="window.location.href='date-cafe.html?date=Feb%2014'">Feb 14</div>
-        <div class="date-box" onclick="window.location.href='date-cafe.html?date=Feb%2015'">Feb 15</div>
-        <div class="date-box" onclick="window.location.href='date-cafe.html?date=Feb%2016'">Feb 16</div>
-        <div class="date-box" onclick="window.location.href='date-cafe.html?date=Feb%2017'">Feb 17</div>
+    
+    <div class="buttons">
+        <button onclick="window.location.href='date-cafe.html?name=HerName&date=2025-02-11&cafe=KFC'">KFC</button>
+        <button onclick="window.location.href='date-cafe.html?name=HerName&date=2025-02-12&cafe=Domino\'s'">Domino's</button>
+        <button onclick="window.location.href='date-cafe.html?name=HerName&date=2025-02-13&cafe=Pizza%20Hut'">Pizza Hut</button>
+        <button onclick="window.location.href='date-cafe.html?name=HerName&date=2025-02-14&cafe=Amercake'">Amer Cake Place</button>
+        <button onclick="window.location.href='date-cafe.html?name=HerName&date=2025-02-15&cafe=Cake%20Walk'">Cake Walk</button>
+        <button onclick="window.location.href='date-cafe.html?name=HerName&date=2025-02-16&cafe=Cafe%20Latte'">Cafe Latte</button>
+        <button onclick="window.location.href='date-cafe.html?name=HerName&date=2025-02-17&cafe=Oliver%20Bistro'">Oliver Bistro</button>
+        <button onclick="window.location.href='date-cafe.html?name=HerName&date=2025-02-17&cafe=My%20Place'">My Place 😉</button>
+        <button onclick="window.location.href='date-cafe.html?name=HerName&date=2025-02-17&cafe=Any%20Other'">Any Other</button>
     </div>
-
-    <div class="date-box" onclick="window.location.href='https://wa.me/+917510643051'">Let Me Know</div>
-
 </body>
 </html>
