@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select a Date</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Choose a Special Date for Our First Step Together</h1>
+        <select id="dateSelect" onchange="nextPage()">
+            <option value="">--Select a Date--</option>
+            <option value="Feb 13">Feb 13</option>
+            <option value="Feb 14">Feb 14</option>
+            <option value="Feb 15">Feb 15</option>
+            <option value="Feb 16">Feb 16</option>
+            <option value="Feb 17">Feb 17</option>
+            <option value="Feb 18">Feb 18</option>
+            <option value="Feb 19">Feb 19</option>
+            <option value="Feb 20">Feb 20</option>
+            <option value="Feb 21">Feb 21</option>
+            <option value="Feb 22">Feb 22</option>
+            <option value="Feb 23">Feb 23</option>
+        </select>
+    </div>
+    <script>
+        function nextPage() {
+            window.location.href = "dates.html";
+        }
+    </script>
+</body>
+</html>
