@@ -3,74 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choose a Date</title>
-    <link href="https://fonts.googleapis.com/css2?family=Featherly&display=swap" rel="stylesheet">
+    <title>Just One Question</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: 'Featherly', cursive;
-            margin: 0;
-            padding: 0;
-            background-image: url('https://github.com/edwinmanickal12/The-one-were-edwin-ask-charu-on-a-date/raw/main/WhatsApp%20Image%202025-02-09%20at%2002.29.49_02eac908.jpg');
+            background-image: url('https://github.com/edwinmanickal12/The-one-were-edwin-ask-charu-on-a-date/raw/main/WhatsApp%20Image%202025-02-09%20at%2002.49.13_02eac908.jpg');
             background-size: cover;
             background-position: center;
-            height: 100vh;
             color: white;
+            margin: 0;
+            height: 100vh;
             text-align: center;
         }
 
         h1 {
-            font-size: 4em;
-            margin-top: 100px;
-        }
-
-        .date-options {
+            font-size: 3em;
             margin-top: 50px;
         }
 
-        .date {
-            font-size: 1.5em;
-            background-color: rgba(0, 0, 0, 0.6);
-            color: white;
-            padding: 15px 30px;
+        #buttons button {
             margin: 10px;
-            border: none;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .date:hover {
-            background-color: rgba(255, 255, 255, 0.5);
-        }
-
-        #let-me-know {
-            font-size: 1.5em;
             padding: 15px 30px;
-            background-color: rgba(255, 0, 0, 0.7);
-            border: none;
-            color: white;
+            font-size: 18px;
             cursor: pointer;
-            transition: 0.3s;
-            margin-top: 30px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border: none;
+            color: black;
+            border-radius: 5px;
         }
 
-        #let-me-know:hover {
-            background-color: rgba(255, 255, 255, 0.6);
+        .dates-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .date-box {
+            background-color: rgba(255, 255, 255, 0.7);
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.5em;
+            color: black;
+            width: 150px;
+            text-align: center;
+        }
+
+        .date-box:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .date-box:active {
+            background-color: rgba(255, 255, 255, 0.5);
         }
     </style>
 </head>
 <body>
     <h1>Choose a Special Day, Valentine</h1>
-    
-    <div class="date-options">
-        <button class="date" onclick="location.href='date-cafe.html?date=11'">Feb 11</button>
-        <button class="date" onclick="location.href='date-cafe.html?date=12'">Feb 12</button>
-        <button class="date" onclick="location.href='date-cafe.html?date=13'">Feb 13</button>
-        <button class="date" onclick="location.href='date-cafe.html?date=14'">Feb 14</button>
-        <button class="date" onclick="location.href='date-cafe.html?date=15'">Feb 15</button>
-        <button class="date" onclick="location.href='date-cafe.html?date=16'">Feb 16</button>
-        <button class="date" onclick="location.href='date-cafe.html?date=17'">Feb 17</button>
+
+    <div class="dates-container">
+        <div class="date-box" onclick="window.location.href='date-cafe.html?date=11th February'">11th February</div>
+        <div class="date-box" onclick="window.location.href='date-cafe.html?date=12th February'">12th February</div>
+        <div class="date-box" onclick="window.location.href='date-cafe.html?date=13th February'">13th February</div>
+        <div class="date-box" onclick="window.location.href='date-cafe.html?date=14th February'">14th February</div>
+        <div class="date-box" onclick="window.location.href='date-cafe.html?date=15th February'">15th February</div>
+        <div class="date-box" onclick="window.location.href='date-cafe.html?date=16th February'">16th February</div>
+        <div class="date-box" onclick="window.location.href='date-cafe.html?date=17th February'">17th February</div>
     </div>
 
-    <button id="let-me-know" onclick="window.location.href='https://wa.me/+917510643051'">Let me know</button>
+    <div id="buttons">
+        <button onclick="window.location.href='https://wa.me/+917510643051'">Let Me Know</button>
+    </div>
 </body>
 </html>
