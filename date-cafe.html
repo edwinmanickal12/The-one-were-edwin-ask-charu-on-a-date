@@ -66,7 +66,9 @@
         const selectedDate = urlParams.get('date');
         
         // Display the selected date on the page
-        document.getElementById('chosen-date').textContent = Selected Date: ${selectedDate};
+        if (selectedDate) {
+            document.getElementById('chosen-date').textContent = Selected Date: ${selectedDate};
+        }
 
         function sendMessage(cafe) {
             let message = Hey Valentine, the date ${selectedDate} at ${cafe}... See you there! 🌝;
