@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Featherly&display=swap');
 
 body {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Featherly', cursive;
     text-align: center;
     background-color: #ffe6f0;
 }
@@ -39,5 +39,5 @@ select {
     width: 120px;
     height: 120px;
     margin: 5px;
-    border-radius: 10px;
+    border-radius: 10px;
 }
