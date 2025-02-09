@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choose a Date</title>
+    <title>Choose a Place</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Featherly&display=swap" rel="stylesheet">
     <style>
@@ -26,7 +26,7 @@
         h1 {
             font-size: 3em;
         }
-        .date-button {
+        .place-button {
             display: block;
             margin: 10px auto;
             padding: 15px 30px;
@@ -37,27 +37,30 @@
             cursor: pointer;
             border-radius: 5px;
         }
-        .date-button:hover {
+        .place-button:hover {
             background: #ddd;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Choose a Special Day, Valentine</h1>
-        <button class="date-button" onclick="selectDate('Feb 11')">Feb 11</button>
-        <button class="date-button" onclick="selectDate('Feb 12')">Feb 12</button>
-        <button class="date-button" onclick="selectDate('Feb 13')">Feb 13</button>
-        <button class="date-button" onclick="selectDate('Feb 14')">Feb 14</button>
-        <button class="date-button" onclick="selectDate('Feb 15')">Feb 15</button>
-        <button class="date-button" onclick="selectDate('Feb 16')">Feb 16</button>
-        <button class="date-button" onclick="selectDate('Feb 17')">Feb 17</button>
+        <h1>Choose a Place for <span id="selectedDate"></span></h1>
+        <button class="place-button" onclick="window.location.href='https://wa.me/+917510643051?text=Hey%20Valentine,%20the%20date%20(Feb%2011)%20at%20KFC.%20See%20you%20there...%F0%9F%98%9D'">KFC</button>
+        <button class="place-button" onclick="window.location.href='https://wa.me/+917510643051?text=Hey%20Valentine,%20the%20date%20(Feb%2011)%20at%20Domino\'s.%20See%20you%20there...%F0%9F%98%9D'">Domino's</button>
+        <button class="place-button" onclick="window.location.href='https://wa.me/+917510643051?text=Hey%20Valentine,%20the%20date%20(Feb%2011)%20at%20Pizza%20Hut.%20See%20you%20there...%F0%9F%98%9D'">Pizza Hut</button>
+        <button class="place-button" onclick="window.location.href='https://wa.me/+917510643051?text=Hey%20Valentine,%20the%20date%20(Feb%2011)%20at%20Amer%20Bake%20Place.%20See%20you%20there...%F0%9F%98%9D'">Amer Bake Place</button>
+        <button class="place-button" onclick="window.location.href='https://wa.me/+917510643051?text=Hey%20Valentine,%20the%20date%20(Feb%2011)%20at%20Cake%20Walk.%20See%20you%20there...%F0%9F%98%9D'">Cake Walk</button>
+        <button class="place-button" onclick="window.location.href='https://wa.me/+917510643051?text=Hey%20Valentine,%20the%20date%20(Feb%2011)%20at%20Cafe%20Latte.%20See%20you%20there...%F0%9F%98%9D'">Cafe Latte</button>
+        <button class="place-button" onclick="window.location.href='https://wa.me/+917510643051?text=Hey%20Valentine,%20the%20date%20(Feb%2011)%20at%20Oliver%20Bistro.%20See%20you%20there...%F0%9F%98%9D'">Oliver Bistro</button>
+        <button class="place-button" onclick="window.location.href='https://wa.me/+917510643051?text=Hey%20Valentine,%20the%20date%20(Feb%2011)%20at%20My%20Place.%20See%20you%20there...%F0%9F%98%9D'">My Place 😉</button>
+        <button class="place-button" onclick="window.location.href='https://wa.me/+917510643051?text=Hey%20Valentine,%20the%20date%20(Feb%2011)%20at%20Any%20Other%20Place.%20See%20you%20there...%F0%9F%98%9D'">Any Other</button>
     </div>
 
     <script>
-        function selectDate(date) {
-            window.location.href = "dates.html?date=" + encodeURIComponent(date);
-        }
+        // Get the date from the URL query parameters and display it on the page
+        const urlParams = new URLSearchParams(window.location.search);
+        const selectedDate = urlParams.get('date');
+        document.getElementById('selectedDate').innerText = selectedDate;
     </script>
 </body>
 </html>
