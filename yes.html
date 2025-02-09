@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>No Response</title>
+    <title>Choose a Date</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Featherly&display=swap" rel="stylesheet">
     <style>
@@ -11,49 +11,53 @@
             font-family: 'Featherly', cursive;
             margin: 0;
             height: 100vh;
-            background-image: url('https://github.com/edwinmanickal12/The-one-were-edwin-ask-charu-on-a-date/raw/main/WhatsApp%20Image%202025-02-09%20at%2002.29.49_58feac26.jpg');
-            background-size: cover; /* Makes sure the image covers the whole page */
-            background-position: center;
-            overflow: hidden;
-        }
-
-        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 50px;
+            background: url('https://github.com/edwinmanickal12/The-one-were-edwin-ask-charu-on-a-date/raw/main/WhatsApp%20Image%202025-02-09%20at%2002.49.13_02eac908.jpg') no-repeat center center/cover;
             color: white;
-            position: relative;
-            z-index: 1;
         }
-
+        .container {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 10px;
+        }
         h1 {
-            font-size: 4em; /* Same font size as on the main page */
+            font-size: 3em;
         }
-
-        #buttons button {
-            margin: 10px;
+        .date-button {
+            display: block;
+            margin: 10px auto;
             padding: 15px 30px;
-            font-size: 18px;
+            font-size: 20px;
+            color: black;
+            background: white;
+            border: none;
             cursor: pointer;
+            border-radius: 5px;
         }
-
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 6em; /* Larger font on desktop */
-            }
-            #buttons button {
-                padding: 20px 40px;
-                font-size: 20px;
-            }
+        .date-button:hover {
+            background: #ddd;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>I'm not asking, I'm telling</h1>
-        
-        <div id="buttons">
-            <button onclick="window.history.back();">Go Back</button>
-        </div>
+        <h1>Choose a Special Day, Valentine</h1>
+        <button class="date-button" onclick="selectDate('Feb 11')">Feb 11</button>
+        <button class="date-button" onclick="selectDate('Feb 12')">Feb 12</button>
+        <button class="date-button" onclick="selectDate('Feb 13')">Feb 13</button>
+        <button class="date-button" onclick="selectDate('Feb 14')">Feb 14</button>
+        <button class="date-button" onclick="selectDate('Feb 15')">Feb 15</button>
+        <button class="date-button" onclick="selectDate('Feb 16')">Feb 16</button>
+        <button class="date-button" onclick="selectDate('Feb 17')">Feb 17</button>
     </div>
+
+    <script>
+        function selectDate(date) {
+            window.location.href = "dates.html?date=" + encodeURIComponent(date);
+        }
+    </script>
 </body>
 </html>
