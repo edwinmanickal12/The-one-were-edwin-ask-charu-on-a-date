@@ -3,64 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choose a Place</title>
+    <title>Just One Question</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Featherly&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Featherly', cursive;
+            background-image: url('https://github.com/edwinmanickal12/The-one-were-edwin-ask-charu-on-a-date/raw/main/WhatsApp%20Image%202025-02-09%20at%2001.13.07_192e250d.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: url('https://github.com/edwinmanickal12/The-one-were-edwin-ask-charu-on-a-date/raw/main/WhatsApp%20Image%202025-02-09%20at%2002.49.13_02eac908.jpg') no-repeat center center/cover;
-            color: white;
+            height: 100vh;  /* Ensure the image covers the full height */
         }
+
         .container {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 30px;
-            border-radius: 10px;
+            text-align: center;
+            padding: 50px;
+            color: white;
+            position: relative;
+            z-index: 1;  /* Ensure the text stays on top of the image */
         }
+
         h1 {
-            font-size: 3em;
+            font-size: 4em; /* Make font bigger */
         }
-        .place-button {
-            display: block;
-            margin: 10px auto;
+
+        #buttons button {
+            margin: 10px;
             padding: 15px 30px;
-            font-size: 20px;
-            color: black;
-            background: white;
-            border: none;
+            font-size: 18px;
             cursor: pointer;
-            border-radius: 5px;
         }
-        .place-button:hover {
-            background: #ddd;
+
+        /* Adjustments for larger screens (desktop) */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 6em; /* Increase the font size on larger screens */
+            }
+            #buttons button {
+                padding: 20px 40px;
+                font-size: 20px;
+            }
+        }
+
+        /* Ensure the background image fills the page without any color bleeding */
+        body {
+            background-color: transparent;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Choose a Place for <span id="selectedDate"></span></h1>
-        <button class="place-button" onclick="window.location.href='https://wa.me/+917510643051?text=Hey%20Valentine,%20the%20date%20(Feb%2011)%20at%20KFC.%20See%20you%20there...%F0%9F%98%9D'">KFC</button>
-        <button class="place-button" onclick="window.location.href='https://wa.me/+917510643051?text=Hey%20Valentine,%20the%20date%20(Feb%2011)%20at%20Domino\'s.%20See%20you%20there...%F0%9F%98%9D'">Domino's</button>
-        <button class="place-button" onclick="window.location.href='https://wa.me/+917510643051?text=Hey%20Valentine,%20the%20date%20(Feb%2011)%20at%20Pizza%20Hut.%20See%20you%20there...%F0%9F%98%9D'">Pizza Hut</button>
-        <button class="place-button" onclick="window.location.href='https://wa.me/+917510643051?text=Hey%20Valentine,%20the%20date%20(Feb%2011)%20at%20Amer%20Bake%20Place.%20See%20you%20there...%F0%9F%98%9D'">Amer Bake Place</button>
-        <button class="place-button" onclick="window.location.href='https://wa.me/+917510643051?text=Hey%20Valentine,%20the%20date%20(Feb%2011)%20at%20Cake%20Walk.%20See%20you%20there...%F0%9F%98%9D'">Cake Walk</button>
-        <button class="place-button" onclick="window.location.href='https://wa.me/+917510643051?text=Hey%20Valentine,%20the%20date%20(Feb%2011)%20at%20Cafe%20Latte.%20See%20you%20there...%F0%9F%98%9D'">Cafe Latte</button>
-        <button class="place-button" onclick="window.location.href='https://wa.me/+917510643051?text=Hey%20Valentine,%20the%20date%20(Feb%2011)%20at%20Oliver%20Bistro.%20See%20you%20there...%F0%9F%98%9D'">Oliver Bistro</button>
-        <button class="place-button" onclick="window.location.href='https://wa.me/+917510643051?text=Hey%20Valentine,%20the%20date%20(Feb%2011)%20at%20My%20Place.%20See%20you%20there...%F0%9F%98%9D'">My Place 😉</button>
-        <button class="place-button" onclick="window.location.href='https://wa.me/+917510643051?text=Hey%20Valentine,%20the%20date%20(Feb%2011)%20at%20Any%20Other%20Place.%20See%20you%20there...%F0%9F%98%9D'">Any Other</button>
+        <h1>Would you make me the happiest by saying Yes?</h1>
+        
+        <div id="buttons">
+            <button onclick="location.href='yes.html'">Yes</button>
+            <button onclick="location.href='no.html'">No</button>
+        </div>
     </div>
-
-    <script>
-        // Get the date from the URL query parameters and display it on the page
-        const urlParams = new URLSearchParams(window.location.search);
-        const selectedDate = urlParams.get('date');
-        document.getElementById('selectedDate').innerText = selectedDate;
-    </script>
 </body>
 </html>
