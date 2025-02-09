@@ -74,12 +74,12 @@
         // Get selected date from URL
         const params = new URLSearchParams(window.location.search);
         const selectedDate = params.get('date') || 'a special day';
-        document.getElementById('selected-date').innerText = Selected Date: ${selectedDate};
+        document.getElementById('selected-date').innerText = `Selected Date: ${selectedDate}`;
 
         // Function to send pre-filled WhatsApp message
         function sendToWhatsApp(place) {
-            const message = Hey Valentine, the date is ${selectedDate} at ${place}... See you there...🌝;
-            const whatsappURL = https://wa.me/+917510643051?text=${encodeURIComponent(message)};
+            const message = `Hey Valentine, the date is ${selectedDate} at ${place}... See you there...🌝`;
+            const whatsappURL = `https://wa.me/+917510643051?text=${encodeURIComponent(message)}`;
             window.location.href = whatsappURL;
         }
     </script>
