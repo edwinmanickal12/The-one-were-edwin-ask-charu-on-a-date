@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,31 +11,22 @@
             font-family: 'Dancing Script', cursive;
             margin: 0;
             height: 100vh;
+            background-image: url('https://raw.githubusercontent.com/edwinmanickal12/The-one-were-edwin-ask-charu-on-a-date/main/WhatsApp%20Video%202025-02-09%20at%208.gif');
+            background-size: cover; /* Makes sure the image covers the whole page */
+            background-position: center;
             overflow: hidden;
-            position: relative;
-            color: white;
-        }
-
-        /* Video Background */
-        #video-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
         }
 
         .container {
             text-align: center;
             padding: 50px;
+            color: white;
             position: relative;
             z-index: 1;
         }
 
         h1 {
-            font-size: 4em;
+            font-size: 4em; /* Same font size as on the main page */
             font-weight: 700;
         }
 
@@ -49,7 +40,7 @@
 
         @media (min-width: 768px) {
             h1 {
-                font-size: 6em;
+                font-size: 6em; /* Larger font on desktop */
             }
             #buttons button {
                 padding: 20px 40px;
@@ -59,13 +50,6 @@
     </style>
 </head>
 <body>
-
-    <!-- Video Background -->
-    <video id="video-bg" autoplay loop muted>
-        <source src="https://raw.githubusercontent.com/edwinmanickal12/The-one-were-edwin-ask-charu-on-a-date/main/WhatsApp%20Video%202025-02-09%20at%208.55.29%20PM.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
     <div class="container">
         <h1>I'm not asking, I'm telling</h1>
         
@@ -73,6 +57,5 @@
             <button onclick="window.history.back();">Go Back</button>
         </div>
     </div>
-
 </body>
 </html>
