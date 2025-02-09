@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Just One Question</title>
+    <title>No Response</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Featherly&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Featherly', cursive;
-            background-image: url('https://github.com/edwinmanickal12/The-one-were-edwin-ask-charu-on-a-date/raw/main/WhatsApp%20Image%202025-02-09%20at%2001.13.07_192e250d.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
             margin: 0;
-            height: 100vh;  /* Ensure the image covers the full height */
+            height: 100vh;
+            background-image: url('https://github.com/edwinmanickal12/The-one-were-edwin-ask-charu-on-a-date/raw/main/WhatsApp%20Image%202025-02-09%20at%2002.29.49_58feac26.jpg');
+            background-size: cover; /* Makes sure the image covers the whole page */
+            background-position: center;
+            overflow: hidden;
         }
 
         .container {
@@ -22,11 +22,11 @@
             padding: 50px;
             color: white;
             position: relative;
-            z-index: 1;  /* Ensure the text stays on top of the image */
+            z-index: 1;
         }
 
         h1 {
-            font-size: 4em; /* Make font bigger */
+            font-size: 4em; /* Same font size as on the main page */
         }
 
         #buttons button {
@@ -36,30 +36,23 @@
             cursor: pointer;
         }
 
-        /* Adjustments for larger screens (desktop) */
         @media (min-width: 768px) {
             h1 {
-                font-size: 6em; /* Increase the font size on larger screens */
+                font-size: 6em; /* Larger font on desktop */
             }
             #buttons button {
                 padding: 20px 40px;
                 font-size: 20px;
             }
         }
-
-        /* Ensure the background image fills the page without any color bleeding */
-        body {
-            background-color: transparent;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Would you make me the happiest by saying Yes?</h1>
+        <h1>I'm not asking, I'm telling</h1>
         
         <div id="buttons">
-            <button onclick="location.href='yes.html'">Yes</button>
-            <button onclick="location.href='no.html'">No</button>
+            <button onclick="window.history.back();">Go Back</button>
         </div>
     </div>
 </body>
