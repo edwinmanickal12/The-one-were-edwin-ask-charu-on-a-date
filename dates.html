@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choose a Place</title>
+    <title>Choose a Date</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Featherly&display=swap" rel="stylesheet">
     <style>
@@ -15,7 +15,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: url('https://github.com/edwinmanickal12/The-one-were-edwin-ask-charu-on-a-date/raw/main/WhatsApp%20Image%202025-02-09%20at%2003.18.59_fc60dc51.jpg') no-repeat center center/cover;
+            background: url('https://github.com/edwinmanickal12/The-one-were-edwin-ask-charu-on-a-date/raw/main/WhatsApp%20Image%202025-02-09%20at%2002.49.13_02eac908.jpg') no-repeat center center/cover;
             color: white;
         }
         .container {
@@ -26,11 +26,7 @@
         h1 {
             font-size: 3em;
         }
-        .selected-date {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-        }
-        .place-button {
+        .date-button {
             display: block;
             margin: 10px auto;
             padding: 15px 30px;
@@ -41,40 +37,26 @@
             cursor: pointer;
             border-radius: 5px;
         }
-        .place-button:hover {
+        .date-button:hover {
             background: #ddd;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Choose a Place</h1>
-        <div class="selected-date" id="selected-date"></div>
-        <button class="place-button" onclick="selectCafe('KFC')">KFC</button>
-        <button class="place-button" onclick="selectCafe('Domino\'s')">Domino's</button>
-        <button class="place-button" onclick="selectCafe('Pizza Hut')">Pizza Hut</button>
-        <button class="place-button" onclick="selectCafe('Amer Bake Place')">Amer Bake Place</button>
-        <button class="place-button" onclick="selectCafe('Cake Walk')">Cake Walk</button>
-        <button class="place-button" onclick="selectCafe('Cafe Latte')">Cafe Latte</button>
-        <button class="place-button" onclick="selectCafe('Oliver Bistro')">Oliver Bistro</button>
-        <button class="place-button" onclick="selectCafe('My Place')">My Place 😉</button>
-        <button class="place-button" onclick="selectCafe('Any Other')">Any Other</button>
+        <h1>Choose a Special Day, Valentine</h1>
+        <button class="date-button" onclick="selectDate('Feb 11')">Feb 11</button>
+        <button class="date-button" onclick="selectDate('Feb 12')">Feb 12</button>
+        <button class="date-button" onclick="selectDate('Feb 13')">Feb 13</button>
+        <button class="date-button" onclick="selectDate('Feb 14')">Feb 14</button>
+        <button class="date-button" onclick="selectDate('Feb 15')">Feb 15</button>
+        <button class="date-button" onclick="selectDate('Feb 16')">Feb 16</button>
+        <button class="date-button" onclick="selectDate('Feb 17')">Feb 17</button>
     </div>
 
     <script>
-        // Get date from URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const selectedDate = urlParams.get('date');
-        document.getElementById("selected-date").innerText = "Selected Date: " + selectedDate;
-
-        function selectCafe(cafe) {
-            if (cafe === "Any Other") {
-                window.location.href = "https://wa.me/+917510643051";
-            } else {
-                const message = Hey Valentine, the date is ${selectedDate} at ${cafe}... See you there...🌝;
-                const encodedMessage = encodeURIComponent(message);
-                window.location.href = https://wa.me/+917510643051?text=${encodedMessage};
-            }
+        function selectDate(date) {
+            window.location.href = "dates.html?date=" + encodeURIComponent(date);
         }
     </script>
 </body>
